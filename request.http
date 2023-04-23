@@ -1,0 +1,39 @@
+GET http://localhost:3000/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2ODIwMTQzMTYsImV4cCI6MTY4MjAxNDM3Nn0.wO1oNpFD3u2NDFYm_ltUTQw2oDMAUjpwLRHF-W65DU0
+
+###
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2ODIwMTQzMTYsImV4cCI6MTY4MjAxNDM3Nn0.wO1oNpFD3u2NDFYm_ltUTQw2oDMAUjpwLRHF-W65DU0
+
+###
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "email": "test1@test.com",
+  "name": "Test",
+  "password": "password",
+  "confirmPassword": "password"
+}
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+
+### Simple Query over HTTP
+// We just write a GraphQL query in the request body
+GRAPHQL http://localhost:3000/graphql
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2ODIwNDc2ODQsImV4cCI6MTY4MjA0Nzc0NH0.rM9Di0_u5og0FJxe0AJT6yTg-Re6_TENm6bvxjJI8zc
+
+query {
+  users {
+          name
+          email
+          isActive
+  }
+}
